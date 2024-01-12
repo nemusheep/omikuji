@@ -5,36 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>おみくじ</title>
   <style>
-    
+
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       margin: 50px;
+      background-size: cover;
     }
 
     #randomText {
       margin-bottom: 20px;
+      font-size: 30px;
     }
 
     #randomButton {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #3498db;
+      padding: 15px 30px;
+      font-size: 30px;
+      background-color: #e25c5c;
       color: #000000;
-      border: none;
+      border: 0.3rem solid;
+      border-color: #871818;
       cursor: pointer;
       border-radius: 5px;
     }
 
     #randomButton:hover {
-      background-color: #68b9ef;
+      background-color: #ed8989;
+      color: #333333;
+      border-color: #ab3e3e;
     }
   </style>
 </head>
 <body>
   <h1>おみくじ</h1>
   <p id="randomText"></p>
-  <button id="randomButton" onclick="displayRandomText()"></button>
+  <button id="randomButton" onmouseover="changeButtonText()" onclick="displayRandomText()">引く？</button>
 
   <script>
     // ランダムな文章のリスト
@@ -52,6 +57,11 @@
       const randomIndex = Math.floor(Math.random() * texts.length);
       const randomText = texts[randomIndex];
       document.getElementById("randomText").textContent = randomText;
+    }
+
+    // ボタンのテキストを変更する関数
+    function changeButtonText() {
+      document.getElementById("randomButton").textContent = "引く！";
     }
 
     // ページが読み込まれたときに初回表示
