@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ランダムな文章</title>
+  <title>おみくじ</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,16 +13,19 @@
   </style>
 </head>
 <body>
-  <h1>ランダムな文章</h1>
+  <h1>おみくじ</h1>
   <p id="randomText"></p>
+  <button onclick="displayRandomText()"></button>
 
   <script>
     // ランダムな文章のリスト
     const texts = [
-      "こんにちは、世界。",
-      "今日はいい天気ですね。",
-      "プログラミングは楽しいです。",
-      "新しいことを学ぶのは素晴らしい体験です。"
+      "大吉",
+      "吉",
+      "小吉",
+      "末吉",
+      "凶",
+      "大凶"
     ];
 
     // ランダムな文章を表示する関数
