@@ -11,6 +11,7 @@
       text-align: center;
       margin: 50px;
       background-size: cover;
+      background-image: "omikujipic/syogatu.jpeg";
     }
 
     #randomText {
@@ -39,17 +40,17 @@
 <body>
   <h1>おみくじ</h1>
   <p id="randomText"></p>
-  <button id="randomButton" onmouseover="changeButtonText()" onclick="displayRandomText()">引く？</button>
+  <button id="randomButton" onmouseover="changeButtonText(0)" onmouseout="changeButtonText(1)" onclick="displayRandomText()">引く？</button>
 
   <script>
     // ランダムな文章のリスト
     const texts = [
-      "大吉",
-      "吉",
-      "小吉",
-      "末吉",
-      "凶",
-      "大凶"
+      "大吉！",
+      "吉！",
+      "小吉！",
+      "末吉！",
+      "凶！",
+      "大凶！"
     ];
 
     // ランダムな文章を表示する関数
@@ -60,8 +61,12 @@
     }
 
     // ボタンのテキストを変更する関数
-    function changeButtonText() {
-      document.getElementById("randomButton").textContent = "引く！";
+    function changeButtonText(count) {
+        if(count==0) {
+            document.getElementById("randomButton").textContent = "引く！";
+        }else{
+            document.getElementById("randomButton").textContent = "引く？";
+        }
     }
 
     // ページが読み込まれたときに初回表示
