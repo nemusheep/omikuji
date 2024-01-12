@@ -1,1 +1,1 @@
-test of git
+test of git [<https://nemusheep.github.io/omikuji/>]
