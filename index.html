@@ -10,12 +10,30 @@
       text-align: center;
       margin: 50px;
     }
+
+    #randomText {
+      margin-bottom: 20px;
+    }
+
+    #randomButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: #000000;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #randomButton:hover {
+      background-color: #68b9ef;
+    }
   </style>
 </head>
 <body>
   <h1>おみくじ</h1>
   <p id="randomText"></p>
-  <button onclick="displayRandomText()"></button>
+  <button id="randomButton" onclick="displayRandomText()"></button>
 
   <script>
     // ランダムな文章のリスト
