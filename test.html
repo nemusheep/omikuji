@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ランダムな文章</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>ランダムな文章</h1>
+  <p id="randomText"></p>
+
+  <script>
+    // ランダムな文章のリスト
+    const texts = [
+      "こんにちは、世界。",
+      "今日はいい天気ですね。",
+      "プログラミングは楽しいです。",
+      "新しいことを学ぶのは素晴らしい体験です。"
+    ];
+
+    // ランダムな文章を表示する関数
+    function displayRandomText() {
+      const randomIndex = Math.floor(Math.random() * texts.length);
+      const randomText = texts[randomIndex];
+      document.getElementById("randomText").textContent = randomText;
+    }
+
+    // ページが読み込まれたときに初回表示
+    displayRandomText();
+  </script>
+</body>
+</html>
