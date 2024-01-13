@@ -13,12 +13,17 @@
       font-size: 25px;
       color: #ffffff;
       background-size: cover;
+      background-position: center;
       background-image: url("omikujipic/syogatu.jpeg");
     }
 
     #randomText {
       margin-bottom: 20px;
       font-size: 30px;
+      background-color: #ffffff;
+      color: #000000;
+      padding: 10px;
+      
     }
 
     #randomButton {
@@ -30,6 +35,7 @@
       border-color: #ffe2e2;
       cursor: pointer;
       border-radius: 5px;
+      
     }
 
     #randomButton:hover {
@@ -40,7 +46,7 @@
   </style>
 </head>
 <body>
-  <h1>おみくじ</h1>
+  <h1>おみくじ♪</h1>
   <p id="randomText"></p>
   <button id="randomButton" onmouseover="changeButtonText(0)" onmouseout="changeButtonText(1)" onclick="displayRandomText()">引く？</button>
 
@@ -72,7 +78,7 @@
     }
 
     // ページが読み込まれたときに初回表示
-    document.getElementById("randomText").textContent = "ボタンを押してね";
+    document.getElementById("randomText").textContent = "あなたの今年の運勢は？";
   </script>
 </body>
 </html>
