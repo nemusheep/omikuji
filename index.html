@@ -35,7 +35,6 @@
       border-color: #ffe2e2;
       cursor: pointer;
       border-radius: 5px;
-      
     }
 
     #randomButton:hover {
@@ -43,15 +42,37 @@
       color: #333333;
       border-color: #fff1f1;
     }
+
+    ul {
+      padding-left: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    li{
+      list-style: none;
+    }
+
+    .image{
+      height: 120px;
+      width: auto;
+    }
+
   </style>
 </head>
 <body>
   <h1>おみくじ♪</h1>
   <p id="randomText"></p>
   <button id="randomButton" onmouseover="changeButtonText(0)" onmouseout="changeButtonText(1)" onclick="displayRandomText()">引く？</button>
+  <ul>
+    <li><img src="./picture/kuji.png" alt="くじ入れ" class="image"></li>
+    <li><img src="./picture/huji.png" alt="ふじ" class="image"></li>
+    <li><img src="./picture/kuji2.png" alt="大吉くじ" class="image"></li>
+  </ul>
 
   <script>
-    // ランダムな文章のリスト
+    // くじ結果のリスト
     const texts = [
       "大吉！",
       "吉！",
@@ -61,14 +82,14 @@
       "大凶！"
     ];
 
-    // ランダムな文章を表示する関数
+    // ランダム表示
     function displayRandomText() {
       const randomIndex = Math.floor(Math.random() * texts.length);
       const randomText = texts[randomIndex];
       document.getElementById("randomText").textContent = randomText;
     }
 
-    // ボタンのテキストを変更する関数
+    // ボタンテキスト変更
     function changeButtonText(count) {
         if(count==0) {
             document.getElementById("randomButton").textContent = "引く！";
@@ -77,7 +98,7 @@
         }
     }
 
-    // ページが読み込まれたときに初回表示
+    // ページが読み込まれたとき表示
     document.getElementById("randomText").textContent = "今年の運勢は？";
   </script>
 </body>
