@@ -61,11 +61,16 @@
     }
 
   </style>
+
+  <audio id="buttonsound" preload="auto">
+    <source src="./audio/omikuji1.mp3" type="audio/mp3">
+  </audio>
+  
 </head>
 <body>
   <h1>おみくじ♪</h1>
   <p id="randomText"></p>
-  <button id="randomButton" onmouseover="changeButtonText(0)" onmouseout="changeButtonText(1)" onclick="displayRandomText()">引く？</button>
+  <button id="randomButton" onmouseover="changeButtonText(0)" onmouseout="changeButtonText(1)" onclick="displayRandomText();soundButton()">引く？</button>
   <ul>
     <li><img src="./picture/kuji.png" alt="くじ入れ" class="image"></li>
     <li><img src="./picture/huji.png" alt="ふじ" class="image"></li>
@@ -97,6 +102,11 @@
         }else{
             document.getElementById("randomButton").textContent = "引く？";
         }
+    }
+
+    // ボタンを押す時の効果音
+    function soundButton(){
+      document.getElementById("buttonsound").play();
     }
 
     // ページが読み込まれたとき表示
